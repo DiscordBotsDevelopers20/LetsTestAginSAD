@@ -31,5 +31,5 @@ async def on_message(message):
         await client.send_message(message.channel, "**Name:-** {} \n \n **ID:-** {} " .format (message.author , message.author.id))
 
 
-client.run(BOT_TOKEN)
+client.run("NDUyMDk2MTE1OTI4NTk2NDkx.DfLW1Q.7sUDuR-ZRYyeU_GqT5ZyCC03RhI")
 
