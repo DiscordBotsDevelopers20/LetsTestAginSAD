@@ -29,7 +29,7 @@ async def on_member_join(member):
     if server.id == "418001869781205002":
         channel = bot.get_channel("418001869781205004")
         msg = "**:tada: Welcome {} To {} , You are the {} User!**".format(member.mention ,member.server.name, len(server.members))
-        await bot.send_message(channel, msg))
+        await bot.send_message(channel, msg)
         
     else:
         return
