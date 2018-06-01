@@ -20,12 +20,8 @@ async def on_ready():
     print("Name: {}".format(client.user.name))
     print("ID: {}".format(client.user.id))
     await asyncio.sleep (1)
-    await client.change_presence(game=discord.Game(name='Tanki Online | >help', type=0))
-    await asyncio.sleep (3600)
-    await client.change_presence(game=discord.Game(name="Tanki Online Servers", type=3))
-    await asyncio.sleep (3600)
-    await client.change_presence(game=discord.Game(name='Tanki Online | >help', type=0))
-
+    await client.change_presence(game=discord.Game(name='>HELP ', type=0))
+   
 
 @client.event
 async def on_message(message):
