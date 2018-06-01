@@ -7,29 +7,33 @@ import time
 import datetime
 import os
 
-client = discord.Client()
+bot = discord.Client()
 bot_prefix= ">"
-client = commands.Bot(command_prefix=bot_prefix)
+bot = commands.Bot(command_prefix=bot_prefix)
 
 
 
 
-@client.event
+@bot.event
 async def on_ready():
     print("TO Bot Official")
-    print("Name: {}".format(client.user.name))
-    print("ID: {}".format(client.user.id))
+    print("Name: {}".format(bot.user.name))
+    print("ID: {}".format(bot.user.id))
     await asyncio.sleep (1)
-    await client.change_presence(game=discord.Game(name='>HELP ', type=0))
+    await bot.change_presence(game=discord.Game(name="Scanner's Server", type=3))
    
+@bot.event
+async def on_member_join(member):
+    server = member.server
 
-@client.event
-async def on_message(message):
-    if message.author.bot:
+    if server.id == "418001869781205002":
+        channel = bot.get_channel("418001869781205004")
+        msg = "**:tada: Welcome {} To {} , You are the {} User!**".format(member.mention ,member.server.name, len(server.members))
+        await bot.send_message(channel, msg))
+        
+    else:
         return
-    if message.content.startswith(">id"):
-        await client.send_message(message.channel, "**Name:-** {} \n \n **ID:-** {} " .format (message.author , message.author.id))
 
 
-client.run(os.getenv("TOKEN"))
+bot.run(os.getenv("TOKEN"))
 
